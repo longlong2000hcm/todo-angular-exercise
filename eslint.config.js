@@ -31,6 +31,7 @@ module.exports = tseslint.config(
       ],
       "@typescript-eslint/no-explicit-any": "off",
       "no-var": "off",
+      "@typescript-eslint/no-empty-function": "off"
     },
   },
   {

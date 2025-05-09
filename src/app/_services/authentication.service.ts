@@ -21,38 +21,10 @@ export class AuthenticationService {
   emailAutofill: any = '';
 
   constructor() {
-    //
   }
 
   login = async () => {
-    // TBD: Get email before login
-    // Cannot check firebase db first and then sign in with signInWithPopup
-    // let whitelisted = false;
-    // let whitelistError = false;
-    // await getDoc(docRef)
-    // .then((res) => {
-    //   whitelisted = res.exists();
 
-    // })
-    // .catch((err) => {
-    //   whitelistError = err;
-    //   console.log('whitelist firebase error', err);
-    // });
-    // if (whitelistError) {return;}
-    // if (whitelisted==false) {
-    //   console.log('user not registered');
-    //   this.router.navigate(['/register']);
-    //   return;
-    // }
-
-    // signInWithPopup(this.auth, this.provider)
-    // .then((res) => {
-    //   const credential = GoogleAuthProvider.credentialFromResult(res);
-    //   console.log('user registered and login success, credential', credential);
-    //   this.router.navigate(['/app']);
-    // }).catch((err) => {
-    //   console.log('sign in error:', err);
-    // });
     const signInRes = await signInWithPopup(this.auth, this.provider)
       .catch(err => console.error('Google sign in error', err)) as UserCredential;
 

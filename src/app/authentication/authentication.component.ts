@@ -16,8 +16,8 @@ export class AuthComponent {
   router = inject(Router);
   hideRegister = false;
 
-  login = () => {
-    this.authenticationService.login();
+  login = async () => {
+    await this.authenticationService.login();
     this.todoService.loadTodoList();
   };
 

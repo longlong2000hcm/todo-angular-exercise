@@ -18,7 +18,6 @@ import { AuthenticationService } from './authentication.service';
 export class TodoService {
   authenticationService = inject(AuthenticationService);
   firestore = getFirestore();
-  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   todoList: any = [];
   error = false;
 

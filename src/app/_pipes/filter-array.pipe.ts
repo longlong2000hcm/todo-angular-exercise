@@ -1,18 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core';
-// import { DocumentData } from 'firebase/firestore';
 import { Todo } from '../todo.interface';
-let i = 0;
 
 @Pipe({
   name: 'filterArray',
 })
 export class FilterArrayPipe implements PipeTransform {
   transform(todoList: Todo[] | null, filter: string): Todo[] {
-    //LOGGER------
-    i += 1;
-    console.log('pipe called (', i, ')');
-    //------------
-
     if (!todoList) {
       return [];
     }

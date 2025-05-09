@@ -7,16 +7,12 @@ export const AuthGuard: CanActivateFn = async () => {
   const router = inject(Router);
   const redirectRoute = router.createUrlTree(['']);
 
-  console.log('invoke only authorized route');
-
   await authService.auth.authStateReady();
 
   if (!authService.auth.currentUser) {
-    console.log('denied')
     return redirectRoute;
   }
 
-  console.log('passed')
   return true;
 };
 
@@ -25,15 +21,11 @@ export const OnlyUnauthorizedGuard: CanActivateFn = async () => {
   const router = inject(Router);
   const redirectRoute = router.createUrlTree(['/app']);
 
-  console.log('invoke only unauthorized route')
-
   await authService.auth.authStateReady();
   
   if (authService.auth.currentUser) {
-    console.log('denied');
     return redirectRoute;
   }
 
-  console.log('passed');
   return true;
 }
