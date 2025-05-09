@@ -1,0 +1,90 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  font-size: 21px;
+  margin: 0px 5px 0px 0px;
+  border-bottom: 1px solid #e0dede;
+
+  &:not(:hover) .show-on-hover {
+    display: none;
+  }
+
+  &:focus-within .hidden-on-sibling-focus {
+    display: none;
+  }
+}
+
+label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 7px;
+  margin-right: 20px;
+}
+
+input {
+  &:focus {
+    box-shadow: 0 0 3px 1px #c08185, 0 0 10px #cf7e82;
+    outline: none;
+    border: none;
+    font-size: 21px;
+    max-width: calc(100% - 53px);
+    margin-left: 43px;
+    padding: 14px 10px 11px 12px;
+  }
+
+  &[type="checkbox"] {
+    display: none;
+  }
+}
+
+p {
+  word-wrap: break-word;
+  max-width: calc(100% - 70px);
+  margin: 13px 0px;
+  font-size: 22px;
+}
+
+.icon {
+  font-size: 28px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 25px;
+}
+
+.fill {
+  flex: 8;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  flex: 1;
+  display: block;
+  color: #989898;
+  font-size: 30px;
+  &:hover {
+    color: #c08185;
+  }
+}
+
+.checked {
+  color: #73b0a4;
+}
+
+.unchecked {
+  color: #989898;
+}
+
+.complete {
+  text-decoration: line-through;
+  color: #989898;
+}

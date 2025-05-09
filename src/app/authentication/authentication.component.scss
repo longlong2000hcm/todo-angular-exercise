@@ -1,0 +1,15 @@
+.authentication-container {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: auto;
+}
+
+.user-name {
+  margin-right: 10px;
+}
+
+button {
+  margin-right: 10px;
+}

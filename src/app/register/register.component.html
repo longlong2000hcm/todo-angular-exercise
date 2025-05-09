@@ -1,0 +1,42 @@
+<article class="register-canvas">
+  <header>
+    <h3>Register your email</h3>
+  </header>
+  <form class="rgtform" 
+  #rgtform="ngForm" 
+  (ngSubmit)="onSubmit()"
+  (keydown.enter)="$event.preventDefault()">
+    <app-mui-text-field
+      class="txt-field"
+      name="'firstname"
+      [(ngModel)]="firstname"
+      [muiLabel]="'First name'"
+      [muiClearable]="true"
+      [muiStyle]="'outlined'"
+      required
+    ></app-mui-text-field>
+    <app-mui-text-field
+      class="txt-field"
+      name="lastname"
+      [(ngModel)]="lastname"
+      [muiLabel]="'Last name'"
+      [muiClearable]="true"
+      [muiStyle]="'outlined'"
+      required
+    ></app-mui-text-field>
+    <app-mui-text-field class="txt-field"
+      name="email"
+      [(ngModel)]="email"
+      [muiLabel]="'Email'"
+      [muiClearable]="true"
+      [muiStyle]="'outlined'"
+      required
+      email
+      minlength="10"
+    >
+    </app-mui-text-field>
+    <button class="submit" type="submit" [disabled]="rgtform.invalid">
+      Submit
+    </button>
+  </form>
+</article>

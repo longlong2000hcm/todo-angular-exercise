@@ -1,0 +1,103 @@
+article {
+  width: 500px;
+  margin: 0 0;
+  box-shadow: 0 2px 4px #0003, 0 25px 50px #0000001a;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+$vertical-offset: 7px;
+$base-shadow-space: 3px;
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #e0dede;
+  box-shadow: 00px 7px 0px -3px #f5f5f5, 0px 7px 3px -4px #282828,
+    0px 14px 0px -5px #eeeeee, 0px 14px 2px -5px #9b9696;
+}
+
+app-list-item {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fill {
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.complete-checkbox {
+  width: 40px;
+  height: 40px;
+}
+
+.number-items-left {
+  margin: 5px;
+  width: 115px;
+  font-size: 13px;
+}
+
+.footer-btn {
+  background-color: white;
+  border: none;
+  margin: 4px 5px;
+  padding: 3px 8px;
+}
+
+.clear-completed-btn:hover {
+  text-decoration: underline;
+}
+
+.filter-btn {
+  &:disabled {
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px #ce4646;
+    color: black;
+  }
+  &:hover {
+    box-shadow: 0 0 0 1px #ce4646;
+    border-radius: 3px;
+  }
+}
+
+.mark-all-btn {
+  border: none;
+  background: none;
+  margin: 5px 20px 2px 11px;
+  color: #989898;
+  rotate: 90deg;
+  font-size: 20px;
+}
+
+.add-todo-input {
+  border: none;
+  background: none;
+  outline: none;
+  height: 45px;
+  font-size: 24px;
+  &::placeholder {
+    font-size: 22px;
+    font-style: italic;
+    color: #989898;
+  }
+}
+
+.add-todo-input-container {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e0dede;
+  &:focus-within {
+    box-shadow: 0 0 3px 1px #c08185, 0 0 10px #cf7e82;
+  }
+}
+
+.filter-row {
+  padding: 3px 0px 3px 10px;
+}

@@ -1,0 +1,18 @@
+<div class="authentication-container">
+
+  @if(authenticationService.auth.currentUser) {
+  <button (click)="logout()">Log out</button>
+  <div class="user-name">
+    {{ authenticationService.auth.currentUser.displayName }}
+  </div>
+  } @else {
+    <button (click)="login()">Log in</button>
+  }
+  
+  <button
+    *ngIf="!authenticationService.auth.currentUser"
+    (click)="registerClick()"
+  >Register
+  </button>
+
+</div>

@@ -1,0 +1,69 @@
+<article>
+  <label for="add-todo-input" class="row add-todo-input-container">
+    <button class="mark-all-btn" title="mark all" (click)="toggleMarkAll()">
+      ❯
+    </button>
+    <input
+      class="fill add-todo-input"
+      id="add-todo-input"
+      #text
+      (keyup.enter)="addItem(text.value); text.value = ''"
+      placeholder="What needs to be done?"
+    />
+  </label>
+  
+  <section
+    *ngIf="(todoService.todoList | getTotalAmount) > 0"
+    class="list-container"
+  >
+    <app-list-item
+      *ngFor="
+        let item of todoService.todoList | filterArray : filter;
+        trackBy: trackByItemId
+      "
+      class="list-item-component"
+      [filter]="filter"
+      [item]="item"
+    ></app-list-item>
+  
+    <div class="row filter-row">
+      <span class="number-items-left">
+        {{ todoService.todoList | getIncompleteAmount }} items left
+      </span>
+      <div class="row fill">
+        <button
+          #allFilterButton
+          class="footer-btn filter-btn"
+          name="all"
+          [disabled]="filter === allFilterButton.name"
+          (click)="changeFilters($event)"
+        >
+          All
+        </button>
+        <button
+          #activeFilterButton
+          class="footer-btn filter-btn"
+          name="active"
+          [disabled]="filter === activeFilterButton.name"
+          (click)="changeFilters($event)"
+        >
+          Active
+        </button>
+        <button
+          #completeFilterButton
+          class="footer-btn filter-btn"
+          name="complete"
+          [disabled]="filter === completeFilterButton.name"
+          (click)="changeFilters($event)"
+        >
+          Completed
+        </button>
+      </div>
+      <button
+        class="footer-btn clear-completed-btn"
+        (click)="deleteAllComplete()"
+      >
+        Clear completed
+      </button>
+    </div>
+  </section>

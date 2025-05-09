@@ -1,12 +1,37 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
+
+import { environment } from '../environments/environment';
+import { CommonModule } from '@angular/common';
+import { AuthenticationService } from './_services/authentication.service';
+import { AuthComponent } from './authentication/authentication.component';
+import { TodoService } from './_services/todo.service';
+import { AsideInfoComponent } from './aside-info/aside-info.component';
+import { DebuggerComponent } from './debugger/debugger.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    AuthComponent,
+    AsideInfoComponent,
+    RouterLink,
+    DebuggerComponent
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'mvc_todo';
+  authenticationService = inject(AuthenticationService);
+  todoService = inject(TodoService);
+  hideRegister = true;
+  
+  constructor() {
+    console.log('production environment:', environment.production);
+  }
+
+  get isLoggedIn() {
+    return this.authenticationService?.auth?.currentUser;
+  }
 }

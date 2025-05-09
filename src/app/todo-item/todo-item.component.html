@@ -1,0 +1,33 @@
+<section class="container">
+  <label class="hidden-on-sibling-focus" [htmlFor]="item.id + 'checkbox'">
+    <input
+      type="checkbox"
+      [id]="item.id + 'checkbox'"
+      [checked]="item.complete"
+      (change)="sendChecked()"
+    />
+    <span *ngIf="item.complete" class="icon-checked checked icon"></span>
+    <span *ngIf="!item.complete" class="icon-unchecked unchecked icon"></span>
+  </label>
+  <p [hidden]="edit" class="fill todo-item" (dblclick)="openEdit()">
+    <span *ngIf="item.complete" class="complete"> {{ item.name }}</span>
+    <span *ngIf="!item.complete">{{ item.name }}</span>
+  </p>
+  <input
+    [hidden]="!edit"
+    [id]="item.id"
+    aria-label="edit-item"
+    class="fill"
+    type="text"
+    [value]="item.name"
+    (blur)="handleBlur()"
+    (keyup.enter)="sendEdit($event)"
+  />
+  <button
+    class="show-on-hover hidden-on-sibling-focus delete-button"
+    title="delete"
+    (click)="sendDelete()"
+  >
+    ×
+  </button>
+</section>

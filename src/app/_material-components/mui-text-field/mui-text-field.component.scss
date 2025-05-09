@@ -1,0 +1,208 @@
+.filled {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: fit-content;
+
+  .tf-container {
+    position: relative;
+    display: block;
+    height: 40px;
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: 1px solid black;
+    background-color: #e0e2ec;
+
+    &::after {
+      content: "";
+      position: relative;
+      top: calc(100% - 1px);
+      display: block;
+      margin: auto;
+      height: 2px;
+      width: 0px;
+      background: transparent;
+      transition: width 0.2s, background-color 0.2s;
+    }
+
+    &:focus-within:after {
+      width: 100%;
+      background: #005cbb;
+    }
+  }
+
+  .tf-input {
+    position: absolute;
+    width: calc(100% - 20px);
+    top: 14px;
+    left: 10px;
+    outline: none;
+    border: none;
+    padding: 0px;
+    font-size: 16px;
+    background-color: transparent;
+
+    &:placeholder-shown + .tf-label {
+      top: 10px;
+      font-size: 16px;
+      color: #44474e;
+    }
+
+    &:focus + .tf-label {
+      top: 0px;
+      font-size: 12px;
+      font-weight: 300;
+      color: #005cbb;
+    }
+  }
+
+  .tf-label {
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    font-size: 12px;
+    font-weight: 300;
+    color: #44474e;
+    background-color: transparent;
+    transition: font-size 0.2s;
+
+    //   &:has(+ input:placeholder-shown) {
+    //     top: 10px;
+    //     font-size: 16px;
+    //     color: #44474e;
+    //   }
+
+    //   &:has(+ input:focus) {
+    //     top: 0px;
+    //     font-size: 12px;
+    //     font-weight: 300;
+    //     color: #005cbb;
+    //   }
+  }
+
+  .err {
+    position: relative;
+    left: 10px;
+    color: red;
+  }
+
+  .tf-clear-btn {
+    position: absolute;
+    top: calc((100% - 30px) / 2);
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    color: #989898;
+    font-size: 16px;
+    font-weight: 900;
+    background-color: transparent;
+
+    &:hover {
+      background-color: rgba(black, 0.1);
+    }
+  }
+}
+
+.outlined {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: fit-content;
+  background: inherit;
+
+  .tf-container {
+    position: relative;
+    display: block;
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid black;
+    background: inherit;
+
+    &::after {
+      content: "";
+      position: relative;
+      top: calc(100% - 1px);
+      display: block;
+      margin: auto;
+      height: 2px;
+      width: 0px;
+      background: transparent;
+      transition: width 0.2s, background-color 0.2s;
+    }
+
+    // &:focus-within:after {
+    //   width: 100%;
+    //   background: #005cbb;
+    // }
+
+    &:focus-within {
+      border: 1px solid #005cbb;
+      box-shadow: inset 0px 0px 0px 1px #005cbb;
+    }
+  }
+
+  .tf-input {
+    position: absolute;
+    width: calc(100% - 20px);
+    top: 14px;
+    left: 10px;
+    outline: none;
+    border: none;
+    padding: 0px;
+    font-size: 16px;
+    background: inherit;
+
+    &:placeholder-shown + .tf-label {
+      top: 10px;
+      font-size: 16px;
+      color: #44474e;
+    }
+
+    &:focus + .tf-label {
+      top: -6px;
+      font-size: 12px;
+      font-weight: 300;
+      color: #005cbb;
+    }
+  }
+
+  .tf-label {
+    position: absolute;
+    left: 10px;
+    top: -6px;
+    padding: 0px 2px;
+    font-size: 12px;
+    font-weight: 300;
+    color: #44474e;
+    background: inherit;
+    transition: font-size 0.2s;
+  }
+
+  .err {
+    position: relative;
+    left: 10px;
+    color: red;
+    background: inherit;
+  }
+
+  .tf-clear-btn {
+    position: absolute;
+    top: calc((100% - 30px) / 2);
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    color: #989898;
+    font-size: 16px;
+    font-weight: 900;
+    background-color: transparent;
+
+    &:hover {
+      background-color: rgba(black, 0.1);
+    }
+  }
+}

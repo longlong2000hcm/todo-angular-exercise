@@ -1,0 +1,65 @@
+<section [className]="muiStyle">
+  <label class="tf-container">
+    <input
+      class="tf-input"
+      type="text"
+      placeholder=""
+      [value]="ngModel"
+      [id]="uniqueId"
+      [name]="uniqueId"
+      [(ngModel)]="ngModel"
+      [required]="required"
+      [email]="email"
+      [maxlength]="maxlength"
+      [minlength]="minlength"
+      #txt="ngModel"
+      (focus)="onFocus()"
+      (blur)="onBlur()"
+      (input)="onInput(txt.value)"
+    />
+    <div class="tf-label">{{ muiLabel }}</div>
+    <button
+      *ngIf="muiClearable && ngModel"
+      class="tf-clear-btn"
+      (click)="clearInput()"
+    >
+      ✕
+    </button>
+  </label>
+
+  <small
+    *ngIf="
+      txt.invalid && (txt.dirty || txt.touched) && txt.hasError('required')
+    "
+    class="err"
+  >
+    {{ muiLabel }} is required.
+  </small>
+  <small
+    *ngIf="
+      txt.invalid &&
+      (txt.dirty || txt.touched) &&
+      !focused &&
+      txt.hasError('email')
+    "
+    class="err"
+  >
+    Invalid email.
+  </small>
+  <small
+    *ngIf="
+      txt.invalid && (txt.dirty || txt.touched) && txt.hasError('maxlength')
+    "
+    class="err"
+  >
+    {{ muiLabel }} cannot exceed {{ maxlength }} characters.
+  </small>
+  <small
+    *ngIf="
+      txt.invalid && (txt.dirty || txt.touched) && txt.hasError('minlength')
+    "
+    class="err"
+  >
+    {{ muiLabel }} cannot be below {{ minlength }} characters.
+  </small>
+</section>
