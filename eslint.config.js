@@ -26,11 +26,11 @@ module.exports = tseslint.config(
         "error",
         {
           type: "element",
-          prefix: "app",
           style: "kebab-case",
         },
       ],
-      "@typescript-eslint/no-explicit-any": "off"
+      "@typescript-eslint/no-explicit-any": "off",
+      "no-var": "off",
     },
   },
   {

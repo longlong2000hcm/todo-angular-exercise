@@ -11,7 +11,7 @@ import { Todo } from '../todo.interface';
 import { TodoService } from '../_services/todo.service';
 
 @Component({
-  selector: 'app-list-item',
+  selector: 'list-item',
   imports: [CommonModule],
   templateUrl: './todo-item.component.html',
   styleUrl: './todo-item.component.scss',

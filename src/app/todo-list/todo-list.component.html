@@ -16,7 +16,7 @@
     *ngIf="(todoService.todoList | getTotalAmount) > 0"
     class="list-container"
   >
-    <app-list-item
+    <list-item
       *ngFor="
         let item of todoService.todoList | filterArray : filter;
         trackBy: trackByItemId
@@ -24,7 +24,7 @@
       class="list-item-component"
       [filter]="filter"
       [item]="item"
-    ></app-list-item>
+    ></list-item>
   
     <div class="row filter-row">
       <span class="number-items-left">

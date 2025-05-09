@@ -5,7 +5,7 @@ import { TodoService } from '../_services/todo.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-auth',
+  selector: 'authentication',
   imports: [CommonModule],
   templateUrl: './authentication.component.html',
   styleUrl: './authentication.component.scss',

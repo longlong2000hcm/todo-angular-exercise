@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { AuthenticationService } from '../_services/authentication.service';
 
 @Component({
-  selector: 'app-debugger',
+  selector: 'debugger',
   imports: [],
   templateUrl: './debugger.component.html',
   styleUrl: './debugger.component.scss'

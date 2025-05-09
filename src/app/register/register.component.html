@@ -6,7 +6,7 @@
   #rgtform="ngForm" 
   (ngSubmit)="onSubmit()"
   (keydown.enter)="$event.preventDefault()">
-    <app-mui-text-field
+    <mui-text-field
       class="txt-field"
       name="'firstname"
       [(ngModel)]="firstname"
@@ -14,8 +14,8 @@
       [muiClearable]="true"
       [muiStyle]="'outlined'"
       required
-    ></app-mui-text-field>
-    <app-mui-text-field
+    ></mui-text-field>
+    <mui-text-field
       class="txt-field"
       name="lastname"
       [(ngModel)]="lastname"
@@ -23,8 +23,8 @@
       [muiClearable]="true"
       [muiStyle]="'outlined'"
       required
-    ></app-mui-text-field>
-    <app-mui-text-field class="txt-field"
+    ></mui-text-field>
+    <mui-text-field class="txt-field"
       name="email"
       [(ngModel)]="email"
       [muiLabel]="'Email'"
@@ -34,7 +34,7 @@
       email
       minlength="10"
     >
-    </app-mui-text-field>
+    </mui-text-field>
     <button class="submit" type="submit" [disabled]="rgtform.invalid">
       Submit
     </button>

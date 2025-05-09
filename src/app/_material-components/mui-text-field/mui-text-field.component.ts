@@ -14,11 +14,10 @@ import {
   NG_VALUE_ACCESSOR,
 } from '@angular/forms';
 
-// eslint-disable-next-line no-var
 var dynamicId = 0;
 
 @Component({
-  selector: 'app-mui-text-field',
+  selector: 'mui-text-field',
   imports: [FormsModule, NgIf],
   templateUrl: './mui-text-field.component.html',
   styleUrl: './mui-text-field.component.scss',
@@ -36,9 +35,7 @@ export class MuiTextFieldComponent
   @ViewChild('txt') txt!: ElementRef;
 
   // ngModel to bind on parent component
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   @Input({ required: true }) ngModel!: any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   @Output() ngModelChange: EventEmitter<any> = new EventEmitter<any>();
 
   // internal ngModel validation
@@ -62,18 +59,14 @@ export class MuiTextFieldComponent
   }
 
   // Control value Accessor implements
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   cvaOnChange = (a: any) => a;
   cvaOnTouched = () => null;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   registerOnChange(fn: any): void {
     this.cvaOnChange = fn;
   }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   registerOnTouched(fn: any): void {
     this.cvaOnTouched = fn;
   }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   writeValue(obj: any): void {
     return obj;
   }

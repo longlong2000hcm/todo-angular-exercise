@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthenticationService } from '../_services/authentication.service';
 
 @Component({
-  selector: 'app-register',
+  selector: 'register',
   imports: [MuiTextFieldComponent, FormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss',

@@ -10,7 +10,7 @@ import { GetTotalAmountPipe } from '../_pipes/get-total-amount.pipe';
 import { AuthenticationService } from '../_services/authentication.service';
 
 @Component({
-  selector: 'app-todo-list',
+  selector: 'todo-list',
   imports: [
     CommonModule,
     TodoItemComponent,
