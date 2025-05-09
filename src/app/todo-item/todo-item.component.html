@@ -1,7 +1,6 @@
 <section class="container">
   <label class="hidden-on-sibling-focus" [htmlFor]="item.id + 'checkbox'">
-    <input
-      type="checkbox"
+    <input title="complete-checkbox" type="checkbox"
       [id]="item.id + 'checkbox'"
       [checked]="item.complete"
       (change)="sendChecked()"
@@ -13,19 +12,14 @@
     <span *ngIf="item.complete" class="complete"> {{ item.name }}</span>
     <span *ngIf="!item.complete">{{ item.name }}</span>
   </p>
-  <input
+  <input title="edit-item" class="fill" type="text"
     [hidden]="!edit"
     [id]="item.id"
-    aria-label="edit-item"
-    class="fill"
-    type="text"
     [value]="item.name"
     (blur)="handleBlur()"
     (keyup.enter)="sendEdit($event)"
   />
-  <button
-    class="show-on-hover hidden-on-sibling-focus delete-button"
-    title="delete"
+  <button title="delete" class="show-on-hover hidden-on-sibling-focus delete-button"
     (click)="sendDelete()"
   >
     ×

@@ -3,36 +3,31 @@
     <h3>Register your email</h3>
   </header>
   <form class="rgtform" 
-  #rgtform="ngForm" 
-  (ngSubmit)="onSubmit()"
-  (keydown.enter)="$event.preventDefault()">
-    <mui-text-field
-      class="txt-field"
-      name="'firstname"
+    #rgtform="ngForm" 
+    (ngSubmit)="onSubmit()"
+    (keydown.enter)="$event.preventDefault()"
+  >
+    <mui-text-field name="'firstname" class="txt-field" 
       [(ngModel)]="firstname"
       [muiLabel]="'First name'"
       [muiClearable]="true"
       [muiStyle]="'outlined'"
       required
     ></mui-text-field>
-    <mui-text-field
-      class="txt-field"
-      name="lastname"
+    <mui-text-field name="lastname" class="txt-field"
       [(ngModel)]="lastname"
       [muiLabel]="'Last name'"
       [muiClearable]="true"
       [muiStyle]="'outlined'"
       required
     ></mui-text-field>
-    <mui-text-field class="txt-field"
-      name="email"
+    <mui-text-field name="email" class="txt-field"
       [(ngModel)]="email"
       [muiLabel]="'Email'"
       [muiClearable]="true"
       [muiStyle]="'outlined'"
       required
       email
-      minlength="10"
     >
     </mui-text-field>
     <button class="submit" type="submit" [disabled]="rgtform.invalid">
