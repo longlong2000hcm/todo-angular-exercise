@@ -24,7 +24,6 @@ export class AuthenticationService {
   }
 
   login = async () => {
-
     const signInRes = await signInWithPopup(this.auth, this.provider)
       .catch(err => console.error('Google sign in error', err)) as UserCredential;
 

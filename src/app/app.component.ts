@@ -7,7 +7,6 @@ import { AuthenticationService } from './_services/authentication.service';
 import { AuthComponent } from './authentication/authentication.component';
 import { TodoService } from './_services/todo.service';
 import { AsideInfoComponent } from './aside-info/aside-info.component';
-import { DebuggerComponent } from './debugger/debugger.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +16,6 @@ import { DebuggerComponent } from './debugger/debugger.component';
     AuthComponent,
     AsideInfoComponent,
     RouterLink,
-    DebuggerComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
