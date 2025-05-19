@@ -1,0 +1,9 @@
+<div class="container">
+    <mui-text-field type="text" placeholder="Filter todos" muiLabel="Search" [muiClearable]="true" muiStyle="outlined" class="txt-field"
+    [(ngModel)]="observablesService.search"/>
+    <div id="suggestion">Suggestion</div>
+    @for (item of observablesService.suggestionList; track $index) {
+    <div><button (click)="observablesService.selectSuggestion(item)">{{item}}</button></div>
+    }
+</div>
+

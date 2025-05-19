@@ -8,6 +8,7 @@ import { GetIncompleteAmountPipe } from '../_pipes/get-incomplete-amount.pipe';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
 import { GetTotalAmountPipe } from '../_pipes/get-total-amount.pipe';
 import { AuthenticationService } from '../_services/authentication.service';
+import { ObservablesService } from '../_services/observables.service';
 
 @Component({
   selector: 'todo-list',
@@ -24,6 +25,7 @@ import { AuthenticationService } from '../_services/authentication.service';
 export class TodoListComponent {
   authenticationService = inject(AuthenticationService);
   todoService = inject(TodoService);
+  observablesService = inject(ObservablesService);
   filter = 'all';
   markAll = false;
 

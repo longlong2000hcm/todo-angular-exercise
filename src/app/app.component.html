@@ -1,17 +1,22 @@
 <header>
   <nav>
-    <div class="app-name-container">
-      <a routerLink="">
-        <h1 class="app-name">Todos</h1>
-      </a>
+    <div class="left">
+      <a routerLink="/app" routerLinkActive="link-active">Todo App</a>
+      <a routerLink="/new-compoent" routerLinkActive="link-active">New component</a>
     </div>
-    <authentication/>
+    <div class="middle"></div>
+    <div class="right">
+      <authentication/>
+    </div>
   </nav>
 </header>
 
 <main>
   <aside>
-    <aside-info/>
+    <search-filter *ngIf="!info"/>
+    <aside-info *ngIf="info"/>
+    <debugger *ngIf="showDebugger()"/>
+    <button class="flip" (click)="flip()">{{info?'To search':'To info'}}</button>
   </aside>
   <div class="content">
     <router-outlet/>

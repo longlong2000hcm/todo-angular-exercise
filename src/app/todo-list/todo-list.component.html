@@ -1,3 +1,6 @@
+<div class="app-name-container">
+  <h1 class="app-name">Todos</h1>
+</div>
 <article>
   <label for="add-todo-input" class="row add-todo-input-container">
     <button class="mark-all-btn" title="mark all" (click)="toggleMarkAll()">
@@ -15,7 +18,7 @@
   >
     <list-item class="list-item-component"
       *ngFor="
-        let item of todoService.todoList | filterArray : filter;
+        let item of todoService.todoList | filterArray : {filter, search: observablesService.search};
         trackBy: trackByItemId
       "
       [filter]="filter"

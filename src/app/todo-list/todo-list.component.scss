@@ -1,4 +1,5 @@
 article {
+  position: relative;
   width: 500px;
   margin: 0 0;
   box-shadow: 0 2px 4px #0003, 0 25px 50px #0000001a;
@@ -98,3 +99,18 @@ app-list-item {
 .filter-row {
   padding: 3px 0px 3px 10px;
 }
+
+.app-name-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.app-name {
+    margin: 0px;
+    font-size: 73px;
+    font-weight: 400;
+    color: #b83f45;
+    letter-spacing: -2px;
+  }

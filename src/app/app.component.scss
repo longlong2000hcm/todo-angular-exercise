@@ -6,42 +6,51 @@ header, footer, main {
 
 header {
   nav {
-    position: absolute;
-    width: 100%;
-    right: 0;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-
-  .app-name-container {
-    position: absolute;
-    top: 20px;
-    left: 270px;
-    width: calc(100% - 270px);
+    position: relative;
+    max-width: 100%;
+    height: fit-content;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    flex-direction: row;
+    margin-bottom: 10px;
+    padding: 5px 0px 5px 10px;
+    background: #b83f45;
+    color: white;
+    border-radius: 5px;
 
 
-  .app-name {
-    margin: 0px;
-    font-size: 73px;
-    font-weight: 400;
-    color: #b83f45;
-    letter-spacing: -2px;
+    .left {
+      justify-self: flex-start;
+      height: fit-content;
+    }
+
+    .middle {
+      flex-grow: 1;
+    }
+
+    .right {
+      width: fit-content;
+      height: fit-content;
+    }
   }
 }
 
+a {
+  padding: 5px 5px 6px 5px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.link-active {
+  background-color: #511c1e;
+}
 
 main {
   display: flex;
   flex-direction: row;
 
   aside {
-    max-width: 270px;
+    position: relative;
+    width: 270px;
     max-height: fit-content;
     background-color: #fbfbfb;
     border-radius: 5px;
@@ -51,7 +60,6 @@ main {
 
   .content {
     position: relative;
-    top: 110px;
     height: fit-content;
     display: flex;
     flex-direction: row;
@@ -74,5 +82,11 @@ footer {
   p {
     margin: 5px;
   }
+}
+
+.flip {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
