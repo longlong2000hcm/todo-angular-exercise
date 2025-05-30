@@ -1,37 +1,48 @@
-<article class="register-canvas">
-  <header>
-    <h3>Register your email</h3>
-  </header>
-  <form class="rgtform" 
-    #rgtform="ngForm" 
-    (ngSubmit)="onSubmit()"
-    (keydown.enter)="$event.preventDefault()"
-  >
-    <mui-text-field name="'firstname" class="txt-field" 
-      [(ngModel)]="firstname"
-      [muiLabel]="'First name'"
-      [muiClearable]="true"
-      [muiStyle]="'outlined'"
-      required
-    ></mui-text-field>
-    <mui-text-field name="lastname" class="txt-field"
-      [(ngModel)]="lastname"
-      [muiLabel]="'Last name'"
-      [muiClearable]="true"
-      [muiStyle]="'outlined'"
-      required
-    ></mui-text-field>
-    <mui-text-field name="email" class="txt-field"
-      [(ngModel)]="email"
-      [muiLabel]="'Email'"
-      [muiClearable]="true"
-      [muiStyle]="'outlined'"
-      required
-      email
+<div class="container">
+  <article class="register-canvas">
+    <header>
+      <h3>Register your email</h3>
+    </header>
+    <form class="rgtform" 
+      #rgtform="ngForm" 
+      (ngSubmit)="onSubmit()"
+      (keydown.enter)="$event.preventDefault()"
     >
-    </mui-text-field>
-    <button class="submit" type="submit" [disabled]="rgtform.invalid">
-      Submit
-    </button>
-  </form>
-</article>
+      <custom-input name="'firstname" class="txt-field" 
+        [ngModel]="firstname"
+        (ngModelChange)="chang($event)"
+        [muiLabel]="'First name'"
+        [muiClearable]="true"
+        [muiStyle]="'outlined'"
+        required
+      ></custom-input>
+      <custom-input name="lastname" class="txt-field"
+        [(ngModel)]="lastname"
+        [muiLabel]="'Last name'"
+        [muiClearable]="true"
+        [muiStyle]="'outlined'"
+        required
+      ></custom-input>
+      <custom-input name="email" class="txt-field"
+        [(ngModel)]="email"
+        [muiLabel]="'Email'"
+        [muiClearable]="true"
+        [muiStyle]="'outlined'"
+        required
+        email
+      >
+      </custom-input>
+      <button class="submit" type="submit" [disabled]="rgtform.invalid">
+        Submit
+      </button>
+    </form>
+  <!-- <ng-container *ngTemplateOutlet="debugger"></ng-container> -->
+  </article>
+</div>
+
+
+<ng-template #debugger>
+  <div>prop firstname: {{firstname}}</div>
+  <div>prop lastname: {{lastname}}</div>
+  <button (click)="log(rgtform.form.value)">a</button>
+</ng-template>

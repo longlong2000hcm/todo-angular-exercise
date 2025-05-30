@@ -1,0 +1,101 @@
+
+:host {
+    display: inline;
+    background: white;
+}
+
+:host-context(.aqua-theme) :host {
+    background-color: aquamarine;
+}
+
+:host ::ng-deep {
+    i {
+        position: relative;
+        font-size: 16px;
+        margin: 0px 10px;
+    }
+
+    input {
+        position: relative;
+        flex-grow: 1;
+        margin-right: 5px;
+        outline: none;
+        border: none;
+        padding: 0px;
+        font-size: 16px;
+        background: inherit;
+
+        &:placeholder-shown + .x-label {
+            top: 10px;
+            font-size: 16px;
+            color: #44474e;
+        }
+
+        &:focus + .x-label {
+            top: -6px;
+            font-size: 12px;
+            font-weight: 300;
+            color: #005cbb;
+        }
+    }
+}
+
+.x-label {
+    position: absolute;
+    left: 40px;
+    top: -6px;
+    padding: 0px 2px;
+    font-size: 12px;
+    font-weight: 300;
+    color: #44474e;
+    background: inherit;
+    transition: font-size 0.2s;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    width: fit-content;
+    border-radius: 5px;
+    border: 1px solid black;
+    background: inherit;
+
+    &::after {
+      content: "";
+      position: relative;
+      top: calc(100% - 1px);
+      display: block;
+      margin: auto;
+      height: 2px;
+      width: 0px;
+      background: transparent;
+      transition: width 0.2s, background-color 0.2s;
+    }
+
+    &:focus-within {
+      border: 1px solid #005cbb;
+      box-shadow: inset 0px 0px 0px 1px #005cbb;
+    }
+}
+
+.tf-clear-btn {
+    position: absolute;
+    top: calc((100% - 30px) / 2);
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    color: #989898;
+    font-size: 16px;
+    font-weight: 900;
+    background-color: transparent;
+
+    &:hover {
+      background-color: rgba(black, 0.1);
+    }
+}
+

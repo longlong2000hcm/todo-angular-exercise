@@ -20,6 +20,7 @@ export class TodoService {
   firestore = getFirestore();
   todoList: any = [];
   error = false;
+  search = '';
 
   loadTodoList = () => {
     const uid = this.authenticationService.auth.currentUser?.uid;

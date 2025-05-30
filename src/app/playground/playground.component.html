@@ -1,0 +1,44 @@
+<ng-template>
+    <p>Table with native custom row</p>
+    <table>
+        <thead>
+            <th>header 1</th>
+            <th>state: {{state()}}</th>
+            <th>header 3</th>
+        </thead>
+        <tr my-tr 
+        prop1="the prop" 
+        [(inputModel)]="state" 
+        #tr2 
+        (output1)="childEmit($event)"
+        (output2)="childEmit($event)">
+            <ng-container td2>td2</ng-container>
+            <ng-container td1>td1</ng-container>
+            rest
+            <div #input1>some text</div>
+        </tr>
+        <tr my-tr>sdfdfs</tr>
+    </table>
+</ng-template>
+
+<div>
+    <input type="radio" name="colors" (click)="color='lightgreen'">Green
+    <input type="radio" name="colors" (click)="color='yellow'">Yellow
+    <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>
+<div [highlight]="color" >Hightlight me!</div>
+<div [highlight]="color" defaultColor="violet">Hightlight me too!</div>
+<br/><br/><br/><br/>
+
+
+<input-wrapper label="my label">
+    <i class="fa-solid fa-house"></i>
+    <input inputRef [(ngModel)]="inputProject" email required>
+</input-wrapper>
+
+<br/>
+<div>Projection model: {{inputProject}}</div>
+
+
+
+    

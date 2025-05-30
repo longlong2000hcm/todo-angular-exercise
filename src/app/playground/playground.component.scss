@@ -1,0 +1,11 @@
+:host ::ng-deep table {
+    border-spacing: 0px;
+    th, td {
+    border: 1px black solid;
+    padding: 5px;
+    width: 150px;
+    height: fit-content;
+    text-align: center;
+    text-justify: center;
+}
+}

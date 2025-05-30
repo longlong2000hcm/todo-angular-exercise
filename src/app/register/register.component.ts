@@ -3,13 +3,13 @@ import {
   inject,
   OnInit,
 } from '@angular/core';
-import { MuiTextFieldComponent } from '../_material-components/mui-text-field/mui-text-field.component';
 import { FormsModule } from '@angular/forms';
 import { AuthenticationService } from '../_services/authentication.service';
+import { CustomInputComponent } from '../_custom-html-elements/custom-input/custom-input.component';
 
 @Component({
   selector: 'register',
-  imports: [MuiTextFieldComponent, FormsModule],
+  imports: [FormsModule, CustomInputComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss',
 })
@@ -24,6 +24,14 @@ export class RegisterComponent implements OnInit {
       this.email = history.state['emailParam'];
     }
   };
+
+  chang = (val: string) => {
+    this.firstname=val
+  }
+
+  log(a:any){
+    console.log(a)
+  }
 
   onSubmit = () => {
     this.authService.postRegister({

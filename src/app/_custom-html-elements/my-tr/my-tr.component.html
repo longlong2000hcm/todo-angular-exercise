@@ -1,0 +1,15 @@
+<td >
+    <div>{{prop1()}}</div>
+    <ng-content select="[td1]"></ng-content>
+</td>
+<td >
+    <div>inputModel: {{inputModel()}}</div>
+    <div><button (click)="updateModel()">+</button></div>
+    <ng-content select="[td2]"></ng-content>
+</td>
+<td>
+    <button (click)="emit1()">emit 1</button>
+    <button (click)="emit2()">emit 2</button>
+    <ng-content></ng-content>
+</td>
+

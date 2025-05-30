@@ -18,7 +18,6 @@ module.exports = tseslint.config(
         "error",
         {
           type: "attribute",
-          prefix: "app",
           style: "camelCase",
         },
       ],
@@ -31,7 +30,10 @@ module.exports = tseslint.config(
       ],
       "@typescript-eslint/no-explicit-any": "off",
       "no-var": "off",
-      "@typescript-eslint/no-empty-function": "off"
+      "@typescript-eslint/no-empty-function": "off",
+      "@angular-eslint/no-output-rename": "off",
+      "@angular-eslint/no-input-rename": "off",
+      "@angular-eslint/template/label-has-associated-control": "off"
     },
   },
   {

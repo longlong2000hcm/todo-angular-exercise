@@ -1,14 +1,15 @@
 import { Routes } from '@angular/router';
-import { TodoListComponent } from './todo-list/todo-list.component';
 import { RegisterComponent } from './register/register.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard, OnlyUnauthorizedGuard } from './routes.guard';
+import { PlaygroundComponent } from './playground/playground.component';
+import { TodoAppComponent } from './todo-app/todo-app.component';
 
 export const routes: Routes = [
     {
         path: 'app',
-        component: TodoListComponent,
+        component: TodoAppComponent,
         title: 'Todo App',
         canActivate: [AuthGuard]
     },
@@ -19,10 +20,15 @@ export const routes: Routes = [
         canActivate: [OnlyUnauthorizedGuard]    
     },
     {
+        path: 'playground',
+        component: PlaygroundComponent,
+        title: 'Playground'
+    },
+    {
         path: '',
         component: WelcomeComponent,
         title: 'Welcome',
-        canActivate: [OnlyUnauthorizedGuard]
+        canActivate: []
     },
     {   
         path: '**',

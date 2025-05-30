@@ -1,6 +1,5 @@
 import { NgIf } from '@angular/common';
 import {
-  AfterViewInit,
   Component,
   ElementRef,
   EventEmitter,
@@ -17,25 +16,26 @@ import {
 var dynamicId = 0;
 
 @Component({
-  selector: 'mui-text-field',
+  selector: 'custom-input',
   imports: [FormsModule, NgIf],
-  templateUrl: './mui-text-field.component.html',
-  styleUrl: './mui-text-field.component.scss',
+  templateUrl: './custom-input.component.html',
+  styleUrl: './custom-input.component.scss',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       multi: true,
-      useExisting: MuiTextFieldComponent,
+      useExisting: CustomInputComponent,
     },
   ],
 })
-export class MuiTextFieldComponent
-  implements AfterViewInit, ControlValueAccessor
+export class CustomInputComponent implements ControlValueAccessor
 {
   @ViewChild('txt') txt!: ElementRef;
 
   // ngModel to bind on parent component
   @Input({ required: true }) ngModel!: any;
+  @Input('ngModelChange') propModelChange?: (value: string) => undefined;
+
   @Output() ngModelChange: EventEmitter<any> = new EventEmitter<any>();
 
   // internal ngModel validation
@@ -52,10 +52,6 @@ export class MuiTextFieldComponent
 
   constructor() {
     dynamicId++;
-  }
-
-  ngAfterViewInit() {
-    return null;
   }
 
   // Control value Accessor implements
@@ -82,10 +78,19 @@ export class MuiTextFieldComponent
   };
 
   onInput = (txt: string) => {
-    this.cvaOnChange(txt);
+    if (this.propModelChange) {
+      this.propModelChange(txt);
+    } else {
+      this.cvaOnChange(txt);
+    }
   };
 
   clearInput = () => {
-    this.ngModelChange.emit('');
+    if (this.propModelChange) {
+      this.propModelChange('');
+    } else {
+      this.ngModelChange.emit('');
+    }
   };
+
 }

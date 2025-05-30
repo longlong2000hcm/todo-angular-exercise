@@ -1,0 +1,15 @@
+<!-- eslint-disable @angular-eslint/template/label-has-associated-control -->
+<label class="container">
+    <ng-content select="i"></ng-content>
+    <ng-content select="input"></ng-content>
+    <div class="x-label">
+        {{label()}}
+    </div>
+    <button
+        *ngIf="showClearBtn()"
+        class="tf-clear-btn"
+        (click)="clear()"
+    >
+      ✕
+    </button>
+</label>

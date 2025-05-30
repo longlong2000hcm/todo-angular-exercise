@@ -1,13 +1,11 @@
-import { inject, Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import { Todo } from '../todo.interface';
-import { ObservablesService } from '../_services/observables.service';
 // var trigger = 0;
 
 @Pipe({
   name: 'filterArray',
 })
 export class FilterArrayPipe implements PipeTransform {
-  observablesService = inject(ObservablesService);
   transform(todoList: Todo[] | null, {filter, search}:{filter: string, search: string}): Todo[] {
     // LOGGER
     // trigger++;

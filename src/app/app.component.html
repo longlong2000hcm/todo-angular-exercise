@@ -1,8 +1,9 @@
 <header>
   <nav>
     <div class="left">
+      <a routerLink="/" routerLinkActive="link-active" [routerLinkActiveOptions]="{exact: true}">Home page</a>
       <a routerLink="/app" routerLinkActive="link-active">Todo App</a>
-      <a routerLink="/new-compoent" routerLinkActive="link-active">New component</a>
+      <a routerLink="/playground" routerLinkActive="link-active">Playground</a>
     </div>
     <div class="middle"></div>
     <div class="right">
@@ -12,19 +13,5 @@
 </header>
 
 <main>
-  <aside>
-    <search-filter *ngIf="!info"/>
-    <aside-info *ngIf="info"/>
-    <debugger *ngIf="showDebugger()"/>
-    <button class="flip" (click)="flip()">{{info?'To search':'To info'}}</button>
-  </aside>
-  <div class="content">
-    <router-outlet/>
-  </div>
+  <router-outlet/>
 </main>
-
-<footer>
-  <p>Double-click to edit a todo</p>
-  <p>Created by the TodoMVC Team</p>
-  <p>Part of TodoMVC</p>
-</footer>

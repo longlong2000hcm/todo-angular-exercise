@@ -1,3 +1,9 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .register-canvas {
   width: 500px;
   height: fit-content;

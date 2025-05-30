@@ -10,6 +10,7 @@ export const AuthGuard: CanActivateFn = async () => {
   await authService.auth.authStateReady();
 
   if (!authService.auth.currentUser) {
+    authService.login();
     return redirectRoute;
   }
 
